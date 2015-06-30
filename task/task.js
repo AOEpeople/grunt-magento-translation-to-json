@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         var languageCsv  = this.data.file.replace('__languages__', magentoLanguageCode);
         var languageCode = magentoLanguageCode.replace(/_/g, '-');
 
-        translations[languageCode] = buildLanguageJson.call(this, languageCsv, languageCode);
+        translations[languageCode] = buildLanguageJson.call(this, languageCsv);
     }, this);
 
     function buildLanguageJson(languageCsv) {
