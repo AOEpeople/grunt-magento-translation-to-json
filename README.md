@@ -45,7 +45,7 @@ extract from the translation files to `translationKeys`. The `dest` property sto
 ```
 prepareTranslations: {
     files: {
-        file: '../../../Fraport_Locale/app/locale/__languages__/Mage_Sales.csv',
+        file: '../../../Magento/app/locale/__languages__/Mage_Sales.csv',
         languages: [
             'de_DE',
             'zh_Hans_CN',
