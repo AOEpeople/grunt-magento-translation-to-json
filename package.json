@@ -8,8 +8,14 @@
   },
   "author": "",
   "license": "MIT",
-  "devDependencies": {
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node --test-dir spec"
+  },
+  "dependencies": {
     "component-each": "0.2.6",
     "csv2array": "0.0.4"
+  },
+  "devDependencies": {
+    "jasmine-node": "1.14.5"
   }
 }
