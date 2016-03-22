@@ -2,14 +2,6 @@ var csv2array = require('csv2array');
 var each = require('component-each');
 
 module.exports = function(grunt) {
-    var translations = {};
-
-    each(this.data.languages, function(magentoLanguageCode) {
-        var languageCsv  = this.data.file.replace('__languages__', magentoLanguageCode);
-        var languageCode = magentoLanguageCode.replace(/_/g, '-');
-
-        translations[languageCode] = buildLanguageJson.call(this, languageCsv);
-    }, this);
 
     function buildLanguageJson(languageCsv) {
         var json = {};
@@ -37,5 +29,18 @@ module.exports = function(grunt) {
         return json;
     }
 
-    return translations;
+    grunt.registerMultiTask('prepareTranslations', "Prepares a translation module build from magento translations", function(src, output) {
+        var translations = {};
+
+        each(this.data.languages, function(magentoLanguageCode) {
+            var languageCsv  = this.data.file.replace('__languages__', magentoLanguageCode);
+            var languageCode = magentoLanguageCode.replace(/_/g, '-');
+
+            translations[languageCode] = buildLanguageJson.call(this, languageCsv);
+        }, this);
+
+        grunt.file.write(this.data.dest, JSON.stringify(translations));
+        console.log('Translation JSON generated.');
+        console.log(JSON.stringify(translations));
+    });
 };
