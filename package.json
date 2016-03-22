@@ -1,6 +1,6 @@
 {
   "name": "grunt-magento-translation-to-json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parses magento translation csv files and builds json for required keys (including fallback if no translation file available).",
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node --test-dir spec"
