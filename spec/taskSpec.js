@@ -1,4 +1,4 @@
-var task  = require('../task/task');
+var task  = require('../tasks/task');
 var grunt = require('grunt');
 var scope = require('./mock/scopeHelper.js');
 
